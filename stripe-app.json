@@ -1,0 +1,27 @@
+{
+  "id": "com.example.stripeappconversionapi",
+  "version": "0.0.1",
+  "name": "StripeAppConversionApi",
+  "icon": "",
+  "permissions": [],
+  "app_backend": {
+    "webhooks": null
+  },
+  "ui_extension": {
+    "views": [
+      {
+        "viewport": "stripe.dashboard.customer.detail",
+        "component": "App"
+      }
+    ],
+    "actions": [],
+    "content_security_policy": {
+      "connect-src": [
+        "https://graph.facebook.com/"
+      ],
+      "image-src": null,
+      "purpose": "Using Facebook Graph API"
+    }
+  },
+  "post_install_action": null
+}
