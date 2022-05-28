@@ -109,7 +109,7 @@ const DashboardOverView = ({
           }}
           onClick={(e) => setpixelaccess()}
         >
-          Set new Pixel Id & Access Token
+          Set new configuration
         </Button>
       </Box>
     </ContextView>
