@@ -53,8 +53,9 @@ const App = ({ userContext, environment }: ExtensionContextValue) => {
     const local_pixel_id = pixelId
     const local_access_token = accessToken
     const local_test_event_code = testEventCode
+    const timestamp = Math.round((new Date()). getTime() / 1000);
     //FB Graph URL
-    const url = `https://graph.facebook.com/v12.0/${local_pixel_id}/events?data=%5B%7B%22action_source%22%3A%22website%22%2C%22event_id%22%3A12345%2C%22event_name%22%3A%22TestEvent%22%2C%22event_time%22%3A1653567322%2C%22user_data%22%3A%7B%22client_user_agent%22%3A%22Mozilla%2F5.0%20(iPhone%3B%20CPU%20iPhone%20OS%2013_3_1%20like%20Mac%20OS%20X)%20AppleWebKit%2F605.1.15%20(KHTML%2C%20like%20Gecko)%20Version%2F13.0.5%20Mobile%2F15E148%20Safari%2F604.1%22%2C%22em%22%3A%22f660ab912ec121d1b1e928a0bb4bc61b15f5ad44d5efdc4e1c92a25e99b8e44a%22%7D%7D%5D&test_event_code=${local_test_event_code}&access_token=${local_access_token}`
+    const url = `https://graph.facebook.com/v12.0/${local_pixel_id}/events?data=%5B%7B%22action_source%22%3A%22website%22%2C%22event_id%22%3A12345%2C%22event_name%22%3A%22TestEvent%22%2C%22event_time%22%3A${timestamp}%2C%22user_data%22%3A%7B%22client_user_agent%22%3A%22Mozilla%2F5.0%20(iPhone%3B%20CPU%20iPhone%20OS%2013_3_1%20like%20Mac%20OS%20X)%20AppleWebKit%2F605.1.15%20(KHTML%2C%20like%20Gecko)%20Version%2F13.0.5%20Mobile%2F15E148%20Safari%2F604.1%22%2C%22em%22%3A%22f660ab912ec121d1b1e928a0bb4bc61b15f5ad44d5efdc4e1c92a25e99b8e44a%22%7D%7D%5D&test_event_code=${local_test_event_code}&access_token=${local_access_token}`
     return fetch(url, {
       method: 'POST',
       headers: {
