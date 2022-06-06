@@ -49,7 +49,6 @@ const App = ({ userContext, environment }: ExtensionContextValue) => {
   }, [])
 
   const makeConversionApi = async () => {
-    console.log('chicken 77777')
     //Placeholder to update with pixel_id and access_token
     const local_pixel_id = pixelId
     const local_access_token = accessToken
