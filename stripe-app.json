@@ -21,6 +21,10 @@
       {
         "viewport": "stripe.dashboard.home.overview",
         "component": "DashboardOverView"
+      },
+      {
+        "viewport": "settings",
+        "component": "AppSettings"
       }
     ],
     "actions": [],
