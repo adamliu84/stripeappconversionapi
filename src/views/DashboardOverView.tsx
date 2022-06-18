@@ -57,6 +57,20 @@ const DashboardOverView = ({
     }
   }
 
+  const mockDeliveryTrackingTest = () => {
+    //Mocking a delivery tracking API call
+    const url = `https://echo.zuplo.io?pacel_id=123&location_id=456`
+    fetch(url, {
+      method: 'GET',
+    })
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        console.log(data.query)
+      })
+  }
+
   return (
     <ContextView title="Setup FB API">
       <Box
@@ -110,6 +124,26 @@ const DashboardOverView = ({
           onClick={(e) => setpixelaccess()}
         >
           Set new configuration
+        </Button>
+      </Box>
+      <Box
+        css={{
+          background: 'container',
+          borderRadius: 'medium',
+          marginTop: 'small',
+          padding: 'large',
+          wordBreak: 'break-all',
+        }}
+      >
+        <Button
+          type="primary"
+          css={{
+            marginTop: 'small',
+            padding: 'medium',
+          }}
+          onClick={(e) => mockDeliveryTrackingTest()}
+        >
+          Delivery track mock API call
         </Button>
       </Box>
     </ContextView>

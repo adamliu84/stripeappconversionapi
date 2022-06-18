@@ -30,7 +30,8 @@
     "actions": [],
     "content_security_policy": {
       "connect-src": [
-        "https://graph.facebook.com/"
+        "https://graph.facebook.com/",
+        "https://echo.zuplo.io/"
       ],
       "image-src": null,
       "purpose": "Using Facebook Graph API"
