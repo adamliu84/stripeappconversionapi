@@ -7,6 +7,14 @@
     {
       "permission": "secret_write",
       "purpose": "Allows storing secrets between page reloads"
+    },
+    {
+      "permission": "payment_intent_read",
+      "purpose": "Payment intent read"
+    },
+    {
+      "permission": "payment_intent_write",
+      "purpose": "Payment intent write"
     }
   ],
   "app_backend": {
@@ -25,6 +33,10 @@
       {
         "viewport": "settings",
         "component": "AppSettings"
+      },
+      {
+        "viewport": "stripe.dashboard.payment.detail",
+        "component": "PaymentDetailView"
       }
     ],
     "actions": [],
