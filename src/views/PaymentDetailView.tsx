@@ -1,6 +1,6 @@
 import { Box, ContextView, Inline } from '@stripe/ui-extension-sdk/ui'
 import type { ExtensionContextValue } from '@stripe/ui-extension-sdk/context'
-import { List, ListItem, Button } from '@stripe/ui-extension-sdk/ui'
+import { List, ListItem, Button, Img } from '@stripe/ui-extension-sdk/ui'
 import {
   createHttpClient,
   STRIPE_API_KEY,
@@ -17,12 +17,24 @@ const PaymentDetailView = ({
   environment,
 }: ExtensionContextValue) => {
   const [metadata, setMetadata] = useState(null)
+  const [locationId, setLocationId] = useState(0)
 
   useEffect(() => {
     stripe.paymentIntents
       .retrieve(environment.objectContext.id)
       .then((response) => setMetadata(response.metadata))
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (locationId > 1) {
+        setLocationId(0)
+      } else {
+        setLocationId(locationId + 1)
+      }
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [locationId])
 
   const addTimestampMetadata = () => {
     const timestamp = Math.round(new Date().getTime() / 1000)
@@ -38,6 +50,13 @@ const PaymentDetailView = ({
   return (
     <ContextView title="Payment Intent Metadata List">
       <Box>
+        <Img
+          src={`https://cfb1-180-129-6-202.ngrok.io/singaporemap/${locationId}/img.svg`}
+          width="400"
+          height="207"
+          alt="Gross margin"
+        />
+
         <Button
           type="primary"
           css={{

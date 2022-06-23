@@ -45,7 +45,9 @@
         "https://graph.facebook.com/",
         "https://echo.zuplo.io/"
       ],
-      "image-src": null,
+      "image-src": [
+        "https://*.ngrok.io"
+      ],
       "purpose": "Using Facebook Graph API"
     }
   },
