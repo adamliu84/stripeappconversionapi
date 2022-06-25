@@ -27,7 +27,7 @@ const PaymentDetailView = ({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (locationId > 1) {
+      if (locationId > 5) {
         setLocationId(0)
       } else {
         setLocationId(locationId + 1)
@@ -51,7 +51,7 @@ const PaymentDetailView = ({
     <ContextView title="Payment Intent Metadata List">
       <Box>
         <Img
-          src={`https://cfb1-180-129-6-202.ngrok.io/singaporemap/${locationId}/img.svg`}
+          src={`https://xxxx-xxx-xxx-x-xxx.ngrok.io/singaporemap/${locationId}/img.svg`}
           width="400"
           height="207"
           alt="Gross margin"
